@@ -1,0 +1,16 @@
+{
+  "name": "shipwire-node-client",
+  "version": "0.0.1",
+  "description": "Node.js shipwire library",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/returnlogic/shipwire-node-client.git"
+  },
+  "author": "David Bauman",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/returnlogic/shipwire-node-client#readme"
+}
