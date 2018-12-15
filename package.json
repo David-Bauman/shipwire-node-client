@@ -4,7 +4,7 @@
   "description": "Node.js shipwire library",
   "main": "index.js",
   "scripts": {
-    "test": "node test/index.js"
+    "test": "./node_modules/.bin/mocha ./test/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -12,5 +12,10 @@
   },
   "author": "David Bauman",
   "license": "MIT",
-  "homepage": "https://bitbucket.org/returnlogic/shipwire-node-client#readme"
+  "homepage": "https://bitbucket.org/returnlogic/shipwire-node-client#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "nock": "^10.0.4"
+  }
 }

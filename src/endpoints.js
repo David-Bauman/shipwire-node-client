@@ -1,4 +1,4 @@
-const {GET, POST, PUT} = require('./constants');
+const {GET, POST, PUT, DELETE} = require('./constants');
 
 const carriers = {
   get: {
@@ -60,7 +60,7 @@ const orders = {
     method: POST
   },
   modify: {
-    endpoint: '/api/v3/orders',
+    endpoint: '/api/v3/orders/:id',
     method: PUT
   },
   cancel: {
@@ -85,8 +85,148 @@ const orders = {
   },
 };
 
+const receivings = {
+  list: {
+    endpoint: '/api/v3/receivings',
+    method: GET
+  },
+  create: {
+    endpoint: '/api/v3/receivings',
+    method: POST
+  },
+  get: {
+    endpoint: '/api/v3/receivings/:id',
+    method: GET
+  },
+  modify: {
+    endpoint: '/api/v3/receivings/:id',
+    method: PUT
+  },
+  cancel: {
+    endpoint: '/api/v3/receivings/:id/cancel',
+    method: POST
+  },
+  cancelLabel: {
+    endpoint: '/api/v3/receivings/:id/labels/cancel',
+    method: POST
+  },
+  holds: {
+    endpoint: '/api/v3/receivings/:id/holds',
+    method: GET
+  },
+  instructions: {
+    endpoint: '/api/v3/receivings/:id/instructionsRecipients',
+    method: GET
+  },
+  attributes: {
+    endpoint: '/api/v3/receivings/:id/extendedAttributes',
+    method: GET
+  },
+  items: {
+    endpoint: '/api/v3/receivings/:id/items',
+    method: GET
+  },
+  shipments: {
+    endpoint: '/api/v3/receivings/:id/shipments',
+    method: GET
+  },
+  trackings: {
+    endpoint: '/api/v3/receivings/:id/trackings',
+    method: GET
+  },
+  labels: {
+    endpoint: '/api/v3/receivings/:id/labels',
+    method: GET
+  },
+  complete: {
+    endpoint: '/api/v3.1/receivings/:id/markComplete',
+    method: POST
+  },
+};
+
+const warehouses = {
+  create: {
+    endpoint: '/api/v3.1/warehouses',
+    method: POST
+  },
+  modify: {
+    endpoint: '/api/v3.1/warehouses/:id',
+    method: PUT
+  },
+  get: {
+    endpoint: '/api/v3.1/warehouses/:id',
+    method: GET
+  },
+  retire: {
+    endpoint: '/api/v3.1/warehouses/:id/retire',
+    method: POST
+  },
+  containers: {
+    endpoint: '/api/v3.1/warehouses/:id/containers',
+    method: GET
+  },
+  carriers: {
+    endpoint: '/api/v3.1/warehouses/:id/carriers',
+    method: GET
+  },
+  addCarrier: {
+    endpoint: '/api/v3.1/warehouses/:id/addCarriers',
+    method: POST
+  },
+  removeCarrier: {
+    endpoint: '/api/v3.1/warehouses/:id/removeCarriers',
+    method: POST
+  }
+};
+
+const webhook = {
+  list: {
+    endpoint: '/api/v3/webhooks',
+    method: GET
+  },
+  create: {
+    endpoint: '/api/v3/webhooks',
+    method: POST
+  },
+  get: {
+    endpoint: '/api/v3/webhooks/:id',
+    method: GET
+  },
+  modify: {
+    endpoint: '/api/v3/webhooks/:id',
+    method: PUT
+  },
+  delete: {
+    endpoint: '/api/v3/webhooks/:id',
+    method: DELETE
+  }
+};
+
+const secret = {
+  list: {
+    endpoint: '/api/v3/secret',
+    method: GET
+  },
+  create: {
+    endpoint: '/api/v3/secret',
+    method: POST
+  },
+  get: {
+    endpoint: '/api/v3/secret/:id',
+    method: GET
+  },
+  delete: {
+    endpoint: '/api/v3/secret/:id',
+    method: DELETE
+  }
+};
+
 module.exports = {
   carriers,
   returns,
-  orders
+  orders,
+  receivings,
+  warehouses,
+  webhook,
+  secret,
 };
