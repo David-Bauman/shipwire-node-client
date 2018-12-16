@@ -1,3 +1,4 @@
+const qs = require('querystring');
 const {replaceParams} = require('./constants');
 const request = require('./request');
 
@@ -7,9 +8,16 @@ function Resource(methods, state) {
     const {endpoint, method} = methods[item];
     this[item] = function() {
       let args = [].slice.call(arguments);
-      let body;
-      if (typeof args[args.length - 1] === "object") body = args.pop();
-      const path = replaceParams(endpoint, args);
+      let body, query;
+      if (typeof args[args.length - 1] === "object") {
+        const item = args.pop();
+        body = item.body;
+        query = item.query;
+      }
+      let path = replaceParams(endpoint, args);
+      if (query) {
+        path += qs.stringify(query)
+      }
       const options = {
         method,
         path,
