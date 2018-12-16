@@ -1,3 +1,18 @@
+const receivings = require('./../../../src/endpoints').receivings;
+const {replaceParams} = require('./../../../src/constants');
+
+let possibles = [];
+const replacements = ['2', 'basdc', 'haha', 'mockingBird17'];
+Object.keys(receivings).forEach(key => {
+  const item = receivings[key];
+  let obj = {};
+  obj["name"] = key;
+  obj["endpoint"] = replaceParams(item.endpoint, replacements);
+  obj["method"] = item.method.toLowerCase();
+  obj["params"] = replacements;
+  possibles.push(obj);
+});
+
 module.exports = {
   result: {
     attributes: require('./attributes').res,
@@ -18,5 +33,6 @@ module.exports = {
   body: {
     create: require('./create').body,
     modify: require('./modify').body,
-  }
+  },
+  possibles: possibles
 }
