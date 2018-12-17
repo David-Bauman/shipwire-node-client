@@ -179,7 +179,7 @@ const warehouses = {
   }
 };
 
-const webhook = {
+const webhooks = {
   list: {
     endpoint: '/api/v3/webhooks',
     method: GET
@@ -227,6 +227,6 @@ module.exports = {
   orders,
   receivings,
   warehouses,
-  webhook,
+  webhooks,
   secret,
 };
