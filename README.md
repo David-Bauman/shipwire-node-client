@@ -45,21 +45,25 @@ Shipwire.returns.list(); // this method needs no params
 All endpoints can take parameters and many require them. The parameters an endpoint accepts are first a series of strings that will be matched to create the path ([more below](#path-replacement)). The last parameter may be an Info object, which describes the querystring and the body of the request.
 ```javascript
 const Info = {
-  query: {...}, // the query field will be querystringified and appended to the path
-  body: {...} // the body to send with the request
+  body: {...}, // the body to send with the request
+  pdf: Boolean, // determines whether to accept a pdf response. defaults to False
+  query: {...} // the query field will be querystringified and appended to the path
 };
 ```
 
-The Info object is optional as well as either field.
+The Info object is optional in some cases. If included, it can have as few as 0 and as many as all of the fields shown above.
 
 ##### Path Replacement
 
 All parameters sent to a method, except for the last one if it is an object, will be interpreted as strings for the purpose of path replacement. Shipwire endpoints can require specific ID(s) to complete: `/api/v3/orders/:id`, the endpoint for retrieving a specific order, requires an order ID in the path. When this endpoint is called, all string parameters will be substituted in for required IDs in the path in the order provided.
 
 ```javascript
-Shipwire.orders.get('order_id'); // will call /api/v3/orders/order_id
+// will call /api/v3/orders/order_id
+Shipwire.orders.get('order_id');
 
-Shipwire.orders.get('order_id', 'Simon', 'Garfunkel'); // will call /api/v3/orders/order_id and ignore 'Simon' and 'Garfunkel' since there is only 1 thing in the path to replace
+// will call /api/v3/orders/order_id and ignore 
+// 'Simon' and 'Garfunkel' since there is only 1 thing in the path to replace
+Shipwire.orders.get('order_id', 'Simon', 'Garfunkel');
 ```
 #### Promises
 
@@ -211,6 +215,5 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
 
 ## To Do
 
-- Give option for accept PDF headers (part of Info?), update README
 - Specify what type of ID for each in [Resources and Methods](#resources-and-methods)
 - Handle (throw errors on) empty tokens in constructor?

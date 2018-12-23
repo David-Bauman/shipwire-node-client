@@ -8,23 +8,28 @@ function Resource(methods, state) {
     const {endpoint, method} = methods[item];
     this[item] = function() {
       let args = [].slice.call(arguments);
-      let body, query;
+      let body, query, pdf;
       if (typeof args[args.length - 1] === "object") {
         const item = args.pop();
         body = item.body;
         query = item.query;
+        pdf = item.pdf;
       }
       let path = replaceParams(endpoint, args);
       if (query) {
         path += qs.stringify(query)
       }
+      let headers = {
+        "Authorization": `Basic ${state.token}`
+      };
+      if (pdf) {
+        headers['Accept'] = 'application/pdf';
+      }
       const options = {
-        method,
-        path,
+        headers,
         host: state.host,
-        headers: {
-          "Authorization": `Basic ${state.token}`
-        }
+        method,
+        path
       };
       return request(options, body);
     }
