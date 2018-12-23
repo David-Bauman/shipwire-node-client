@@ -42,7 +42,7 @@ Shipwire.returns.list(); // this method needs no params
 
 #### Parameters
 
-All endpoints can take parameters and many require them. The parameters an endpoint accepts are first a series of strings that will be matched to create the path ([more here](#path-replacement)). The last parameter may be an Info object, which describes the querystring and the body of the request.
+All endpoints can take parameters and many require them. The parameters an endpoint accepts are first a series of strings that will be matched to create the path ([more below](#path-replacement)). The last parameter may be an Info object, which describes the querystring and the body of the request.
 ```javascript
 const Info = {
   query: {...}, // the query field will be querystringified and appended to the path

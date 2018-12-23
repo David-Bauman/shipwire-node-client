@@ -12,18 +12,18 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha ./test/*.spec.js",
     "transpile": "babel src -d dist --copy-files",
-    "prepublish": "npm run transpile"
+    "prepublishOnly": "npm run transpile"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/returnlogic/shipwire-node-client.git"
+    "url": "https://github.com/David-Bauman/shipwire-node-client"
   },
   "author": {
     "name": "David Bauman",
     "email": "dbauman1@swarthmore.edu"
   },
   "license": "MIT",
-  "homepage": "https://bitbucket.org/returnlogic/shipwire-node-client#readme",
+  "homepage": "https://github.com/David-Bauman/shipwire-node-client",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
