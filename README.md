@@ -85,6 +85,11 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
 - carriers
     - [`list([Info])`](https://www.shipwire.com/w/developers/carrier/#panel-shipwire0)
     - [`get(carrierId)`](https://www.shipwire.com/w/developers/carrier/#panel-shipwire1)
+- containers
+    - [`list([Info])`](https://www.shipwire.com/w/developers/container/#panel-shipwire0)
+    - [`create(Info)`](https://www.shipwire.com/w/developers/container/#panel-shipwire1)
+    - [`modify(id, Info)`](https://www.shipwire.com/w/developers/container/#panel-shipwire2)
+    - [`get(id)`](https://www.shipwire.com/w/developers/container/#panel-shipwire3)
 - orders
     - [`list()`](https://www.shipwire.com/w/developers/order/#panel-shipwire0)
     - [`get(id)`](https://www.shipwire.com/w/developers/order/#panel-shipwire1)
@@ -110,6 +115,30 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
     - [`labelStatus(id [, Info])`](https://www.shipwire.com/w/developers/order/#panel-shipwire21)
     - [`generatePackingList(Info)`](https://www.shipwire.com/w/developers/order/#panel-shipwire22)
     - [`packingListStatus(id [, Info])`](https://www.shipwire.com/w/developers/order/#panel-shipwire23)
+- products
+    - [`list([Info])`](https://www.shipwire.com/w/developers/product/#panel-shipwire0)
+    - [`create(Info)`](https://www.shipwire.com/w/developers/product/#panel-shipwire1)
+    - [`modifyGeneral(Info)`](https://www.shipwire.com/w/developers/product/#panel-shipwire2)
+    - [`modifySpecific(id, Info)`](https://www.shipwire.com/w/developers/product/#panel-shipwire3)
+    - [`get(id)`](https://www.shipwire.com/w/developers/product/#panel-shipwire4)
+    - [`retire(Info)`](https://www.shipwire.com/w/developers/product/#panel-shipwire5)
+- purchaseOrders
+    - [`list([Info])`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire0)
+    - [`get(id [, Info])`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire1)
+    - [`create(Info)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire2)
+    - [`modify(id, Info)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire3)
+    - [`cancel(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire4)
+    - [`hold(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire5)
+    - [`clearHold(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire6)
+    - [`listHolds(id [, Info])`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire7)
+    - [`items(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire8)
+    - [`trackings(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire9)
+    - [`orders(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire10)
+    - [`attributes(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire11)
+    - [`approve(id)`](https://www.shipwire.com/w/developers/purchaseorder/#panel-shipwire12)
+- rate
+    - [`oldCreate(Info)`](https://www.shipwire.com/w/developers/rate/#panel-shipwire0)
+    - [`create(Info)`](https://www.shipwire.com/w/developers/rate/#panel-shipwire1)
 - receivings
     - [`list([Info])`](https://www.shipwire.com/w/developers/receiving/#panel-shipwire0)
     - [`create(Info)`](https://www.shipwire.com/w/developers/receiving/#panel-shipwire1)
@@ -125,6 +154,16 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
     - [`trackings(id)`](https://www.shipwire.com/w/developers/receiving/#panel-shipwire11)
     - [`labels(id)`](https://www.shipwire.com/w/developers/receiving/#panel-shipwire12)
     - [`complete(id)`](https://www.shipwire.com/w/developers/receiving/#panel-shipwire13)
+- reports
+    - [`list([Info])`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire0)
+    - [`get(id)`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire1)
+    - [`getSubscribed([Info])`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire2)
+    - [`getNotSubscribed([Info])`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire3)
+    - [`generated([Info])`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire4)
+    - [`subscribe(id, Info)`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire5)
+    - [`unsubscribe(id)`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire6)
+    - [`listFrequencies()`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire7)
+    - [`listSubscribers()`](https://www.shipwire.com/w/developers/business-reports/#panel-shipwire8)
 - returns
     - [`list([Info])`](https://www.shipwire.com/w/developers/return/#panel-shipwire0)
     - [`create(Info)`](https://www.shipwire.com/w/developers/return/#panel-shipwire1)
@@ -142,6 +181,16 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
     - [`create(Info)`](https://www.shipwire.com/w/developers/webhook/#panel-shipwire6)
     - [`get(id)`](https://www.shipwire.com/w/developers/webhook/#panel-shipwire7)
     - [`delete(id)`](https://www.shipwire.com/w/developers/webhook/#panel-shipwire8)
+- stock
+    - [`list([Info])`](https://www.shipwire.com/w/developers/stock/#panel-shipwire0)
+    - [`adjust(Info)`](https://www.shipwire.com/w/developers/stock/#panel-shipwire1)
+- vendors
+    - [`list([Info])`](https://www.shipwire.com/w/developers/vendor/#panel-shipwire0)
+    - [`create(Info)`](https://www.shipwire.com/w/developers/vendor/#panel-shipwire1)
+    - [`modify(id, Info)`](https://www.shipwire.com/w/developers/vendor/#panel-shipwire2)
+    - [`get(id)`](https://www.shipwire.com/w/developers/vendor/#panel-shipwire3)
+    - [`retire(id)`](https://www.shipwire.com/w/developers/vendor/#panel-shipwire4)
+    - [`attributes(id)`](https://www.shipwire.com/w/developers/vendor/#panel-shipwire5)
 - warehouses
     - [`list([Info])`](https://www.shipwire.com/w/developers/warehouse/#panel-shipwire0)
     - [`create(Info)`](https://www.shipwire.com/w/developers/warehouse/#panel-shipwire1)
@@ -163,6 +212,5 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
 ## To Do
 
 - Give option for accept PDF headers (part of Info?), update README
-- Add Purchase Order, Container, Address Validation, Stock, Business Reports, Rate, Product, Vendor endpoints
 - Specify what type of ID for each in [Resources and Methods](#resources-and-methods)
 - Handle (throw errors on) empty tokens in constructor?

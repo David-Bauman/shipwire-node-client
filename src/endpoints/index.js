@@ -1,9 +1,16 @@
 module.exports = {
   carriers: require('./carriers'),
+  containers: require('./containers'),
   orders: require('./orders'),
+  products: require('./products'),
+  purchaseOrders: require('./purchaseOrders'),
+  rate: require('./rate'),
   receivings: require('./receivings'),
+  reports: require('./reports'),
   returns: require('./returns'),
   secret: require('./secret'),
+  stock: require('./stock'),
+  vendors: require('./vendors'),
   warehouses: require('./warehouses'),
   webhooks: require('./webhooks'),
 };
