@@ -1,6 +1,10 @@
 const {GET, POST, PUT} = require('./../constants');
 
 const warehouses = {
+  list: {
+    endpoint: '/api/v3.1/warehouses',
+    method: GET
+  },
   create: {
     endpoint: '/api/v3.1/warehouses',
     method: POST

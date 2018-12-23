@@ -38,11 +38,11 @@ const returns = {
     method: POST
   },
   generateLabels: {
-    endpoint: '/api/v3.1/returns/:id/generateLabels',
+    endpoint: '/api/v3.1/returns/generateLabels',
     method: POST
   },
   labelStatus: {
-    endpoint: '/api/v3.1/returns/:id/generateLabels/:id',
+    endpoint: '/api/v3.1/returns/generateLabels/:id',
     method: GET
   }
 };

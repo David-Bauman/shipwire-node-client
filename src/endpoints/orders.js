@@ -29,9 +29,13 @@ const orders = {
     endpoint: '/api/v3/orders/:id/holds',
     method: GET
   },
-  tracking: {
+  getTrackings: {
     endpoint: '/api/v3/orders/:id/trackings',
     method: GET
+  },
+  createTracking: {
+    endpoint: '/api/v3/orders/:id/trackings',
+    method: POST
   },
   invoice: {
     endpoint: '/api/v3/orders/:id/commercialInvoice',
@@ -78,19 +82,19 @@ const orders = {
     method: POST
   },
   generateLabels: {
-    endpoint: '/api/v3.1/orders/:id/splitOrders',
+    endpoint: '/api/v3.1/orders/generateLabels',
     method: POST
   },
   labelStatus: {
-    endpoint: '/api/v3.1/orders/:id/splitOrders',
+    endpoint: '/api/v3.1/orders/generateLabels/:id',
     method: GET
   },
   generatePackingList: {
-    endpoint: '/api/v3.1/orders/:id/splitOrders',
+    endpoint: '/api/v3.1/orders/generatePackingLists',
     method: POST
   },
   packingListStatus: {
-    endpoint: '/api/v3.1/orders/:id/splitOrders',
+    endpoint: '/api/v3.1/orders/generatePackingLists/:id',
     method: GET
   },
 };
