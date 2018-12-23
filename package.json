@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Node.js shipwire library",
   "keywords": [
-    "node.js",
-    "shipwire",
+    "Shipwire",
     "API",
-    "client"
+    "Node.js"
   ],
   "main": "dist/index.js",
   "scripts": {
