@@ -15,16 +15,19 @@ function Resource(methods, state) {
         query = item.query;
         pdf = item.pdf;
       }
+
       let path = replaceParams(endpoint, args);
       if (query) {
-        path += qs.stringify(query)
+        path += '?' + qs.stringify(query);
       }
+
       let headers = {
         "Authorization": `Basic ${state.token}`
       };
       if (pdf) {
         headers['Accept'] = 'application/pdf';
       }
+      
       const options = {
         headers,
         host: state.host,

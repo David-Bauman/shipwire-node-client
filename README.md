@@ -58,10 +58,10 @@ The Info object is optional in some cases. If included, it can have as few as 0 
 All parameters sent to a method, except for the last one if it is an object, will be interpreted as strings for the purpose of path replacement. Shipwire endpoints can require specific ID(s) to complete: `/api/v3/orders/:id`, the endpoint for retrieving a specific order, requires an order ID in the path. When this endpoint is called, all string parameters will be substituted in for required IDs in the path in the order provided.
 
 ```javascript
-// will call /api/v3/orders/order_id
+// will call '/api/v3/orders/order_id'
 Shipwire.orders.get('order_id');
 
-// will call /api/v3/orders/order_id and ignore 
+// will call '/api/v3/orders/order_id' and ignore 
 // 'Simon' and 'Garfunkel' since there is only 1 thing in the path to replace
 Shipwire.orders.get('order_id', 'Simon', 'Garfunkel');
 ```
@@ -71,13 +71,18 @@ All endpoints return a promise.
 ```javascript
 const Info = {
   body: {
-    "orderNo": "foobar1",
-    "externalId": "rFooBar1",
-    "vendorId": "567",
-    ...
+    orderNo: "foobar1",
+    externalId: "rFooBar1",
+    vendorId: "567"
+  },
+  query: {
+    extra: "information",
+    for: "querystring"
   }
 };
-Shipwire.orders.modify('<id_of_order>', Info).then(res => {
+
+// will call '/api/v3/orders/id_of_order?extra=information&for=querystring'
+Shipwire.orders.modify('id_of_order', Info).then(res => {
   console.log(res);
 }).catch(err => {
   console.error(err);
