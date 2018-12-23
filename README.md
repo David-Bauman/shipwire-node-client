@@ -1,5 +1,11 @@
 # Shipwire API Client for Node.js
 
+[![](https://img.shields.io/npm/v/shipwire-node-client.svg)](https://github.com/David-Bauman/shipwire-node-client)
+[![GitHub Issues](https://img.shields.io/github/issues/David-Bauman/shipwire-node-client.svg)](https://github.com/David-Bauman/shipwire-node-client/issues)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)
+[![Dependency Status](https://david-dm.org/david-bauman/shipwire-node-client.svg)](https://david-dm.org/david-bauman/shipwire-node-client)
+[![devDependency Status](https://david-dm.org/david-bauman/shipwire-node-client/dev-status.svg)](https://david-dm.org/david-bauman/shipwire-node-client#info=devDependencies)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ## Getting Started
 
 ### Installation
@@ -217,8 +223,26 @@ Shipwire.orders.modify('id_of_order', Info).then(res => {
     - [`modify(id, Info)`](https://www.shipwire.com/w/developers/webhook/#panel-shipwire3)
     - [`delete(id)`](https://www.shipwire.com/w/developers/webhook/#panel-shipwire4)
 
+## Contributing
+If you like this project, we'd love to have your help. Contributing doesn't necessarily mean writing code though. You can also help out by:
+
+- Opening issues on bugs you find or new features you'd like to see
+- Joining discussion on issues and pull requests
+- Helping write documentation i.e. fleshing out the [Methods](#resources-and-methods)
+
+### Updating NPM
+
+Generally, the workflow for updating the NPM package is as follows:
+
+0. (Optional) Open an issue and describe what you will be trying to fix: a specific bug or a new feature
+1. Clone the repo to your local machine
+2. Create a new branch (pick a name that clearly describes the intent)
+3. Commit changes to the new branch and push to origin
+4. Open a pull request with a clear description of the change - allow some time for feedback
+5. Once there's a general consensus, merge the PR into master and update the npm package as needed
 
 ## To Do
 
-- Specify what type of ID for each in [Resources and Methods](#resources-and-methods)
+- Specify what type of ID for each method in [Resources and Methods](#resources-and-methods)
+- Clarify what [Info] means in [Resources and Methods](#resources-and-methods), how to get syntax from the lists as given
 - Handle (throw errors on) empty tokens in constructor?
