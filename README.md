@@ -22,8 +22,9 @@ const Shipwire = require('shipwire-node-client')({
 ```
 
 The Shipwire constructor takes an object with two fields:
+
 - `token` - Required - a base64-encoding of your Shipwire *username:password* string. This is your username, followed by a colon (:), followed by your password.
-- `beta` - Defaults to false - determines whether the host will be `api.beta.shipwire.com` or `api.shipwire.com`
+- `beta` - Defaults to false - determines whether the host will be `api.beta.shipwire.com` (if beta evaluates to true) or `api.shipwire.com` (if beta evaluates to false)
 
 ## API
 
@@ -163,3 +164,5 @@ Shipwire.orders.modify('<id_of_order>', Info).then(res => {
 
 - Give option for accept PDF headers (part of Info?), update README
 - Add Purchase Order, Container, Address Validation, Stock, Business Reports, Rate, Product, Vendor endpoints
+- Specify what type of ID for each in [Resources and Methods](#resources-and-methods)
+- Handle (throw errors on) empty tokens in constructor?

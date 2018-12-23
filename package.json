@@ -2,10 +2,16 @@
   "name": "shipwire-node-client",
   "version": "0.0.1",
   "description": "Node.js shipwire library",
-  "keywords": ["node.js", "shipwire", "API", "client"],
-  "main": "index.js",
+  "keywords": [
+    "node.js",
+    "shipwire",
+    "API",
+    "client"
+  ],
+  "main": "dist/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/*.spec.js"
+    "test": "./node_modules/.bin/mocha ./test/*.spec.js",
+    "transpile": "babel src -d dist --copy-files"
   },
   "repository": {
     "type": "git",
@@ -18,6 +24,8 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/returnlogic/shipwire-node-client#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
     "nock": "^10.0.4"
