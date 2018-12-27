@@ -10,6 +10,6 @@ function Shipwire({token, beta}) {
   Object.keys(endpoints).forEach(item => {
     this[item] = new Resource(endpoints[item], this.state);
   });
-};
+}
 
 module.exports = Shipwire;

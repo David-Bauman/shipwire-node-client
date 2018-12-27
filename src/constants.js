@@ -6,7 +6,7 @@ module.exports = {
   replaceParams: function(route, replacements) {
     let newRoute = route.slice();
     let i = 0;
-    return newRoute.replace(/(:[^\/]+)/g, val => {
+    return newRoute.replace(/(:[^/]+)/g, () => {
       return replacements[i++];
     });
   }
