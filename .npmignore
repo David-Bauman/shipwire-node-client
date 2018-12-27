@@ -2,3 +2,4 @@ src
 coverage
 create.js
 .babelrc
+.nyc_output

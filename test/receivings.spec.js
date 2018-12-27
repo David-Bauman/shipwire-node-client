@@ -1,5 +1,7 @@
 const {expect} = require('chai');
-const {Shipwire, nockInstance} = require('.');
+
+// this test uses Shipwire with beta flag (all requests would go to api.beta.shipwire.com)
+const {betaShipwire, nockInstance} = require('.');
 const {result, body, possibles} = require('./constants/receivings');
 
 describe('Receivings', function() {
@@ -14,12 +16,12 @@ describe('Receivings', function() {
       const req = body[current.name];
       if (req) {
         nockInstance[current.method](current.endpoint, req).reply(200, res);
-        return Shipwire.receivings[current.name](...current.params, req).then(({response}) => {
+        return betaShipwire.receivings[current.name](...current.params, req).then(({response}) => {
           return expect(JSON.parse(response)).to.deep.equal(res);
         });
       } 
       nockInstance[current.method](current.endpoint).reply(200, res);
-      return Shipwire.receivings[current.name](...current.params).then(({response}) => {
+      return betaShipwire.receivings[current.name](...current.params).then(({response}) => {
         return expect(JSON.parse(response)).to.deep.equal(res)
       });
     });
