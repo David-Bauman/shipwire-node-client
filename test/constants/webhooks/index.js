@@ -22,7 +22,7 @@ module.exports = {
     modify: require('./modify').res,
   },
   body: {
-    get: require('./get').body,
+    create: require('./create').body,
     modify: require('./modify').body,
   },
   possibles: possibles

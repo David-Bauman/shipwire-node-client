@@ -9,9 +9,9 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "coverage": "./node_modules/.bin/nyc ./node_modules/.bin/mocha ./test/*.spec.js && nyc report --reporter=lcov",
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "prepublishOnly": "npm run transpile",
-    "test": "./node_modules/.bin/mocha ./test/*.spec.js",
+    "test": "./node_modules/.bin/nyc --reporter=html --reporter=text ./node_modules/.bin/mocha ./test/*.spec.js",
     "transpile": "babel src -d dist --copy-files"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
+    "coveralls": "^3.0.2",
     "eslint": "^5.11.1",
     "mocha": "^5.2.0",
     "nock": "^10.0.4",

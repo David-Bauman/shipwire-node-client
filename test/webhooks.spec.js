@@ -6,15 +6,14 @@ describe('webhooks', function() {
   
   afterEach(() => expect(nockInstance.isDone()).to.be.true);
 
-  let current;
   for (let i = 0; i < possibles.length; i++) {
-    current = possibles[i];
+    let current = possibles[i];
     it(current.name, function() {
       const res = result[current.name];
       const req = body[current.name];
       if (req) {
         nockInstance[current.method](current.endpoint, req).reply(200, res);
-        return Shipwire.webhooks[current.name](...current.params, req).then(({response}) => {
+        return Shipwire.webhooks[current.name](...current.params, {body: req}).then(({response}) => {
           return expect(JSON.parse(response)).to.deep.equal(res);
         });
       } 
