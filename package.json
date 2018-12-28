@@ -12,7 +12,7 @@
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "prepublishOnly": "npm run transpile",
     "test": "./node_modules/.bin/nyc --reporter=html --reporter=text ./node_modules/.bin/mocha ./test/*.spec.js",
-    "transpile": "babel src -d dist --copy-files"
+    "transpile": "./node_modules/.bin/babel src -d dist --copy-files"
   },
   "repository": {
     "type": "git",
