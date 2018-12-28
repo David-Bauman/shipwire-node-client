@@ -1,7 +1,7 @@
 const {expect} = require('chai');
 const qs = require('querystring');
 const {Shipwire, nockInstance} = require('.');
-const {result, body, possibles} = require('./constants/stock');
+const {body, possibles} = require('./constants/stock');
 
 describe('stock', function() {
   
@@ -10,7 +10,6 @@ describe('stock', function() {
   for (let i = 0; i < possibles.length; i++) {
     let current = possibles[i];
     it(current.name, function() {
-      const res = result[current.name];
       const req = body[current.name];
       const query = {extraCondition: true};
       if (req) {
