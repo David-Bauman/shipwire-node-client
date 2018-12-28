@@ -1,6 +1,6 @@
 {
   "name": "shipwire-node-client",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Node.js client for the Shipwire API",
   "keywords": [
     "Shipwire",
