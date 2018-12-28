@@ -13,14 +13,15 @@ describe('stock', function() {
       const req = body[current.name];
       const query = {extraCondition: true};
       if (req) {
-        nockInstance[current.method](current.endpoint, req).reply(400);
-        return Shipwire.stock[current.name](...current.params, {body: req}).catch(r => {
-          console.log(r)
+        const errorMsg = {message: 'something awful happened', code: 'AWFUL_ERROR'};
+        nockInstance[current.method](current.endpoint, req).replyWithError(errorMsg);
+        return Shipwire.stock[current.name](...current.params, {body: req}).catch(err => {
+          expect(err.response).to.deep.equal(errorMsg);
         });
       }
       nockInstance[current.method](current.endpoint + "?" + qs.stringify(query)).reply(400);
-      return Shipwire.stock[current.name](...current.params, {query: query, pdf: true}).catch(r => {
-        console.log(r)
+      return Shipwire.stock[current.name](...current.params, {query, pdf: true}).catch(r => {
+        console.log(r);
       });
     });
   }
