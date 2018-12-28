@@ -1,10 +1,10 @@
 # Shipwire API Client for Node.js
 
-[![](https://img.shields.io/npm/v/shipwire-node-client.svg)](https://github.com/David-Bauman/shipwire-node-client)
-[![GitHub Issues](https://img.shields.io/github/issues/David-Bauman/shipwire-node-client.svg)](https://github.com/David-Bauman/shipwire-node-client/issues)
+[![Build Status](https://travis-ci.org/David-Bauman/shipwire-node-client.svg?branch=master)](https://travis-ci.org/David-Bauman/shipwire-node-client)
+[![Coverage Status](https://coveralls.io/repos/github/David-Bauman/shipwire-node-client/badge.svg?branch=master)](https://coveralls.io/github/David-Bauman/shipwire-node-client?branch=master)
+[![Dependency Status](https://david-dm.org/David-Bauman/shipwire-node-client.svg)](https://david-dm.org/David-Bauman/shipwire-node-client)
+[![devDependency Status](https://david-dm.org/David-Bauman/shipwire-node-client/dev-status.svg)](https://david-dm.org/David-Bauman/shipwire-node-client#info=devDependencies)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-green.svg)
-[![Dependency Status](https://david-dm.org/david-bauman/shipwire-node-client.svg)](https://david-dm.org/david-bauman/shipwire-node-client)
-[![devDependency Status](https://david-dm.org/david-bauman/shipwire-node-client/dev-status.svg)](https://david-dm.org/david-bauman/shipwire-node-client#info=devDependencies)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ## Getting Started
 
