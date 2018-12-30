@@ -22,15 +22,26 @@ $ yarn add shipwire-node-client
 
 ```javascript
 const Shipwire = require('shipwire-node-client')({
-  token: new Buffer('<username>:<password>').toString('base64'),
+  username: '<username>',
+  password: '<password>',
   beta: false
+});
+
+// you could also create the token yourself and send that in instead
+const Shipwire = require('shipwire-node-client')({
+  token: new Buffer.from('<username>:<password>').toString('base64'),
+  beta: true
 });
 ```
 
-The Shipwire constructor takes an object with two fields:
+The Shipwire constructor takes an object with up to four fields:
 
-- `token` - Required - a base64-encoding of your Shipwire *username:password* string. This is your username, followed by a colon (:), followed by your password.
+- `token` - Authentication method - a base64-encoding of your Shipwire *username:password* string. This is your username, followed by a colon (:), followed by your password.
+- `username` - Authentication method - requires `password` as well - your Shipwire username
+- `password` - Authentication method - requires `username` as well - your Shipwire password
 - `beta` - Defaults to false - determines whether the host will be `api.beta.shipwire.com` (if beta evaluates to true) or `api.shipwire.com` (if beta evaluates to false)
+
+If a valid authentication method is not passed in, an error will be thrown.
 
 ## API
 
@@ -243,4 +254,4 @@ Generally, the workflow for updating the NPM package is as follows:
 
 ## To Do
 
-- Handle (throw errors on) empty tokens in constructor?
+- <s>Handle (throw errors on) empty tokens in constructor</s>

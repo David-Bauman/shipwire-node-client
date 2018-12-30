@@ -1,4 +1,4 @@
-const token = new Buffer('<username>:<password>').toString('base64');
+const token = new Buffer.from('<username>:<password>').toString('base64');
 
 const Shipwire = require('./../src')({token: token, beta: false});
 

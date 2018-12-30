@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.0.7] 2018-12-30
+### Added
+- Username/password as a valid authentication method
+- Example to README for username/password constructor
+- Authentication tests
+
 ## [1.0.6] 2018-12-28
 ### Changed
 - Tweaks resources and methods section of README
