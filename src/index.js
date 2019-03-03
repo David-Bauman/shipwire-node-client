@@ -1,7 +1,7 @@
 const endpoints = require('./endpoints'); 
 const Resource = require('./resource');
 
-const authError = new Error ('No authentication method passed in. Pass in either a token or both a username and a password.');
+const authError = new Error('No authentication method passed in. Pass in either a token or both a username and a password.');
 
 function Shipwire(params) {
   if (!(this instanceof Shipwire)) return new Shipwire(params);

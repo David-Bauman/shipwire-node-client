@@ -13,7 +13,7 @@
   "scripts": {
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "linter": "./node_modules/.bin/eslint src/ test/",
-    "prepublishOnly": "npm run transpile",
+    "prepare": "npm run transpile",
     "test": "./node_modules/.bin/nyc --reporter=html --reporter=text ./node_modules/.bin/mocha ./test/*.spec.js",
     "transpile": "./node_modules/.bin/babel src -d dist --copy-files"
   },
